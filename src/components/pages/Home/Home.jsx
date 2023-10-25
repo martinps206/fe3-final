@@ -4,29 +4,23 @@ import { Typography, Container, Button } from "@mui/material";
 
 const Home = () => {
   return (
-    <Container maxWidth="sm" sx={{paddingTop: "30vh"}}>
-      <Typography
-        component="h1"
-        variant="h2"
-        align="center"
-        color="textPrimary"
-        gutterBottom
-      >
-        DENTISTAS.COM
+    <Container maxWidth="sm" sx={{ paddingTop: "30vh" }}>
+      <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+        DH Odonto
       </Typography>
       <Typography variant="h6" align="center" color="textSecondary" paragraph>
-        Este es el proyecto final de Frontend III. En este proyecto se usa React con Vite,
-        Material UI, React Router Dom, Context API y localStorage Se usan los
-        siguientes hooks, useContext, useState, useEffect, useReducer.
+        Este proyecto final de Frontend III utiliza tecnologías como React con Vite,
+        Material UI, React Router Dom, Context API y localStorage. Además, aprovecha los
+        hooks de React, incluyendo useContext, useState, useEffect y useReducer.
       </Typography>
       <Button
         variant="contained"
         color="primary"
-        to="/dentistas"
         component={Link}
-        sx={{display: "flex", align: ""}}
+        to="/dentistas"
+        sx={{ display: "flex", justifyContent: "center" }}
       >
-        Ir a mis dentistas
+        Ir a Mis Dentistas
       </Button>
     </Container>
   );

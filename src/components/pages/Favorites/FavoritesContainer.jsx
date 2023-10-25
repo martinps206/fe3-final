@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Typography, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import Professional from "../Professionals/Professional";
 import {GlobalContext} from "../../../context/GlobalContext";
 

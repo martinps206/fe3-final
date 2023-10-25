@@ -8,16 +8,23 @@ const ProfessionalsContainer = () => {
   const { state, dispatch } = useContext(GlobalContext);
 
   useEffect(() => {
-    const getProfesionals = axios.get(
-      "https://jsonplaceholder.typicode.com/users"
-    );
-    getProfesionals
-      .then((res) => dispatch({ type: "GET_USERS", payload: res.data }))
-      .catch((err) => console.log(err));
-  }, []);
+    // Utiliza async/await para hacer que el código sea más legible
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://jsonplaceholder.typicode.com/users"
+        );
+        dispatch({ type: "GET_USERS", payload: response.data });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData(); // Llama a la función para cargar los dentistas.
+  }, [dispatch]); // Agrega dispatch como dependencia.
 
   return (
-    <Container maxWidth="xl" sx={{paddingTop: "80px", paddingBottom:"80px"}}>
+    <Container maxWidth="xl" sx={{ paddingTop: "80px", paddingBottom: "80px" }}>
       <h1>Listado de dentistas:</h1>
       <Professional users={state.users} dispatch={dispatch} favs={state.favs} />
     </Container>
